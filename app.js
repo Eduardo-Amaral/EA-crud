@@ -16,9 +16,10 @@ app.use(session({
   resave: true,
   saveUninitialized: true
 }))
+
 app.use(flash())
 //Middleware
-app.use((req, res, next)=>{
+app.use((req, res, next) => {
   res.locals.success_msg = req.flash('success_msg')
   res.locals.error_msg = req.flash('error_msg')
   next()
@@ -40,14 +41,14 @@ app.set('view engine', 'handlebars');
 //Mongoose
 mongoose.Promise = global.Promise;
 mongoose.connect('mongodb://localhost/blognodejs').then(() => {
-  console.log('Conectado ao mongo')
-}).catch((err) => {
+  console.log('Conectado ao mongo')}).catch((err) => {
   console.log('Ocorreu um erro ao conectar' + err)
 })
 
 
 //Public
 app.use(express.static(path.join(__dirname, 'public')));
+
 
 app.use((req, res, next) => {
   console.log('Middleware ativo.')
@@ -65,7 +66,7 @@ app.use('/admin', admin);
 
 
 //Outros
-const PORT = 6080;
+const PORT = 6081;
 app.listen(PORT, () => {
   console.log('Servidor ok! ' + 'http://localhost:' + PORT)
 })
