@@ -1,0 +1,26 @@
+<div class="jumbotron p-5 bg-light">
+  <h1 class="display-4">Bem vindo Ao Meu Blog!</h1>
+  <p class="lead">Esse é um projeto de estudos feito por <a target="_blank" href="https://eduardoamaral.netlify.app">Eduardo Amaral</a> </p>
+  <small>Construi essa aplicação utilizando Node + Express + MongoDb</small>
+  <hr class="my-4">
+    <a class="btn btn-primary btn-lg" href="/admin" role="button">Iniciar</a>
+    <br>
+</div>
+<h2 class="mt-5">Postagens Recentes:</h2>
+
+
+{{#each postagens}}
+<div class="card mt-5">
+  <div class="card-body">
+    <h3>{{titulo}}</h3>
+    <p>{{descricao}}</p>
+    <a href="/postagem/{{slug}}"><button class="btn btn-success">Ler mais</button></a>
+    <hr>
+    <small>Categoria: {{categoria.nome}}</small>
+    <br>
+    <small>Data da publicação: {{date}}</small>
+  </div>
+</div>
+{{else}}
+<h5>Nenhuma postagem registrada</h5>
+{{/each}}
