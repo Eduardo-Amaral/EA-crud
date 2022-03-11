@@ -1,5 +1,1 @@
-if (process.env.NODE_ENV == 'production'){
-  module.exports = {mongoURI: 'mongodb+srv://EduardoAmaral:edugamerbr3@ea-blog.edbda.mongodb.net/EA-Blog?retryWrites=true&w=majority'}
-}else{
-  module.exports =  {mongoURI: 'mongodb://localhost/blognodejs'}
-}
+module.exports = {mongoURI: 'mongodb+srv://EduardoAmaral:<iQXGxIh67vA2i5Mo>@ea-blog.edbda.mongodb.net/EA-Blog?retryWrites=true&w=majority'}
