@@ -45,7 +45,7 @@ router.post('/registro', (req, res) => {
       erros: erros
     })
   } else {
-    Usuario.find({
+    Usuario.findOne({
       email: req.body.email
     }).lean().then((usuario) => {
       if (usuario) {
@@ -93,6 +93,12 @@ router.post('/login', (req, res, next) => {
     failureRedirect: '/usuarios/login',
     failureFlash: 'true'
   })(req, res, next)
+})
+
+router.get('/logout', (req, res)=>{
+  req.logout();
+  req.flash('success_msg', 'Até mais! 😊');
+  res.redirect('/');
 })
 
 module.exports = router;

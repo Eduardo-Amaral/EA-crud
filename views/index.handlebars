@@ -1,12 +1,15 @@
 <div class="jumbotron p-5 bg-light">
   <h1 class="display-4">Bem vindo Ao Meu Blog!</h1>
   <p class="lead">Esse é um projeto de estudos feito por <a target="_blank" href="https://eduardoamaral.netlify.app">Eduardo Amaral</a> </p>
-  <small>Construi essa aplicação utilizando Node + Express + MongoDb</small>
-  <hr class="my-4">
-    <a class="btn btn-primary btn-lg" href="/admin" role="button">Iniciar</a>
-    <br>
+  <small>Essa foi a minha primeira apliacação utilizando Node + Express + MongoDb</small>
+  <hr>
+    {{#if user}}
+    {{else}}
+    <a class="btn btn-primary btn-lg" href="/usuarios/login" role="button">Entrar</a>
+    <a class="btn btn-primary btn-lg" href="/usuarios/registro" role="button">Cadastrar</a>
+    {{/if}}
 </div>
-<h2 class="mt-5">Postagens Recentes:</h2>
+<h2 class="mt-5">Postagens:</h2>
 
 
 {{#each postagens}}
