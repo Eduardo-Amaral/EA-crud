@@ -130,7 +130,7 @@ app.use('/usuarios', usuarios);
 
 
 //Outros
-
-app.listen(process.env.PORT || 6081, () => {
-  console.log('Servidor ok! ' + 'http://localhost:' + PORT)
+const PORT = process.env.PORT || 6081;
+app.listen(PORT, () => {
+  console.log('Servidor ok!')
 });
