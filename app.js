@@ -8,7 +8,7 @@ const mongoose = require('mongoose');
 const session = require('express-session');
 const flash = require('connect-flash');
 require('./models/Postagem');
-const Postagem = mongoose.model('postagens');
+const Postagem = mongoose.model('postagens'); 
 require('./models/Categoria');
 const Categoria = mongoose.model('categorias');
 const usuarios = require('./routes/usuario');
